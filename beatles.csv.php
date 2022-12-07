@@ -8,5 +8,3 @@ Teddy,Tafari,Senior
 Teddy,Tafari,Senior
 Teddy,Tafari,Senior
 Lul,Add,Freshamn
-Kal,E,Freshamn
-Wendi,C,Junior
