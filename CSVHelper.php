@@ -116,12 +116,14 @@ class CSVHelper{
     static function find($filename,$data){
         if (file_exists($filename)) {
             $fh = fopen($filename, 'r');
-        
+            
+            $i=0;
             while ($line = fgets($fh)) {
                 $line = explode(",",$line);
                 if (trim($line[0])==$data){
-                    return TRUE;
+                    return $i;
                 }
+                $i++;
             }
             return FALSE;
             fclose($fh);

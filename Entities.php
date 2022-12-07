@@ -52,7 +52,8 @@ static function addStudent(){
     ?>
 
 
-    <form method="POST" style = "text-align: center; margin-left: auto; margin-right: auto;">
+    <form method="POST">
+    <h2>Create</h2>
     <div style="width: 18rem;">
       <label for="fname">First Name:</label>
       <input type="text" name="fname" class="form-control" id="exampleFormControlInput1" placeholder="Firstname" required>
@@ -81,7 +82,56 @@ static function addStudent(){
   <?php
 }
 
-// static function removeStudent(){
+static function removeStudent(){
 
-// }
+}
+
+static function modifyStudent(){
+  if (isset($_POST['fname'])&&isset($_POST['lname'])) {
+      $ID = $_POST['ID'];
+      $fname = $_POST['fname'];
+      $lname = $_POST['lname'];
+      $Year = $_POST['Year'];
+      $add_student=[$fname, $lname, $Year];
+      CSVHelper::modify('beatles.csv.php',$ID-1,$add_student);
+  }
+
+
+  ?>
+
+
+  <form method="POST">
+  <h2>Modify</h2>
+  <div style="width: 18rem;">
+    <label for="ID">ID:</label>
+    <input type="number" name="ID" class="form-control" id="exampleFormControlInput1" placeholder="ID" required>
+  </div>
+
+  <div style="width: 18rem;">
+    <label for="fname">First Name:</label>
+    <input type="text" name="fname" class="form-control" id="exampleFormControlInput1" placeholder="Firstname" required>
+  </div>
+
+  <div style="width: 18rem;">
+    <label for="lname">Last Name:</label>
+    <input type="text" name="lname" class="form-control" id="exampleFormControlInput1" placeholder="Lastname" required>
+  </div>
+
+  <div style="width: 18rem;">
+    <label for="Year">Year</label>
+    <select id="Year" name="Year" >
+      <option value="Freshamn">Freshamn</option>
+      <option value="Sophomore">Sophomore</option>
+      <option value="Junior">Junior</option>
+      <option value="Senior">Senior</option>
+</select>
+  </div>
+
+
+  <div>
+    <button type="submit">Add Student</button>
+  </div>
+</form>
+<?php
+}
 }

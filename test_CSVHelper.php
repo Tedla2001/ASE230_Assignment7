@@ -17,8 +17,7 @@ echo '<pre>';print_r(CSVHelper::read('beatles.csv.php'));
 // echo '<pre>';print_r(CSVHelper::read('beatles.csv.php'));
 
 //FIND
-// if (CSVHelper::find('beatles.csv.php',"Luke")){
-//     echo "True";
-// }
+CSVHelper::find('beatles.csv.php',"Tedla");
+echo '<pre>';print_r(CSVHelper::find('beatles.csv.php',"Tedla"));
 // else echo "FALSE";
 // echo '<pre>';print_r(CSVHelper::read('beatles.csv.php'));
