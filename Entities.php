@@ -83,6 +83,30 @@ static function addStudent(){
 }
 
 static function removeStudent(){
+    if (isset($_POST['index'])) {
+      $index = $_POST['index'];
+      CSVHelper::delete('beatles.csv.php', $index-1);
+
+    }
+
+  ?>
+    <form method="POST" style="text-align: center; margin-left: auto; margin-right: auto;">
+      <div style="width: 18rem;">
+        <label for="index">Index</label>
+        <input type="text" name="index" class="form-control" id="exampleFormControlInput1" placeholder="0" required>
+      </div>
+
+      <div style="width: 18rem;">
+
+        <div>
+          <button type="submit">Remove</button>
+        </div>
+      </div>
+
+
+    </form>
+
+<?php
 
 }
 

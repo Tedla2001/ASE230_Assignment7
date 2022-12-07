@@ -7,4 +7,6 @@ Entities::addStudent();
 
 Entities::modifyStudent();
 
+Entities::removeStudent();
+
 Entities::showStudent();
